@@ -28,6 +28,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+        current_user.logs.create(description: "Creacion de la tarea: #{@task.name}")
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -42,6 +43,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        current_user.logs.create(description: "Editada de la tarea: #{@task.name}")
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
@@ -55,6 +57,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1.json
   def destroy
     @task.destroy
+    current_user.logs.create(description: "Eliminada la tarea: #{@task.name}")
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
