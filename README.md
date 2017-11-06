@@ -1,24 +1,5 @@
-# README
+# Calendar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Calendar app which use [Devise](https://github.com/plataformatec/devise) and [Simple Calendar](https://github.com/excid3/simple_calendar).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It let's you create events and then see them in a calendar. 
